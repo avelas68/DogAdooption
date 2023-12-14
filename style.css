@@ -1,0 +1,26 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+}
+button {
+  position: absolute;
+  top: 120px;
+  left: 1050px;
+  background-color: #ddd;
+  font-family: sans-serif;
+  border: none;
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 26px;
+  margin: 4px 2px;
+  transition: 0.3s;
+  }
+  button:hover {
+    background-color: #FFC25D;
+    color: "#black";
+  }
