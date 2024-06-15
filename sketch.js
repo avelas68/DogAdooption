@@ -69,7 +69,10 @@ function draw() {
     let Breed = data.getColumn('Breed');
 
     let PetName = data.getColumn('PetName');
-    
+    text("About Me", 500, 550);
+    text("Age: " + PetAge[count], 500, 600);
+    text("Pet Size: " + PetSize[count], 500, 650);
+    text("Breed: " + Breed[count], 500, 700);
       Likes[LikeCount] = PetName[count]+"\n";
 
       Likes.forEach(function(value) {
@@ -81,6 +84,7 @@ function draw() {
 
       fill('#FFC25D');
       textSize(26);
+
       text("Likes: \n", 900,120);
       for (let i = 0 ; i<LikeCount; i++){
       text(uniqueLikes.join(""), 900,150);
@@ -102,10 +106,7 @@ function draw() {
     
 
     fill('#FFC25D');
-    text("About Me", 500, 550);
-    text("Age: " + PetAge[count], 500, 600);
-    text("Pet Size: " + PetSize[count], 500, 650);
-    text("Breed: " + Breed[count], 500, 700);
+
 
   }
  if (off){
@@ -120,6 +121,7 @@ function draw() {
 
     let PetName = data.getColumn('PetName');
     let Distance = data.getColumn('Distance');
+
       fill('#FFC25D');
       textSize(26);
       text("Likes: \n", 900,120);
@@ -135,8 +137,13 @@ function draw() {
   
       image(checkmark,500,450,50,50);
       image(ximg,700,450,50,50);
-  
-    
+    let PetAge = data.getColumn('PetAge');
+    let PetSize = data.getColumn('PetSize');
+    let Breed = data.getColumn('Breed');
+    text("About Me", 500, 550);
+    text("Age: " + PetAge[count], 500, 600);
+    text("Pet Size: " + PetSize[count], 500, 650);
+    text("Breed: " + Breed[count], 500, 700);
   }
 }
  function myFunction() {
@@ -147,15 +154,15 @@ function draw() {
   animal = prompt("Which animal are you interested in adopting: \n"+ uniqueLikes.join(""));
   }
   if(uniqueLikes.length == 0){
-    text = "I am sorry you do not have any animals that you currently like :(";
+    text = prompt("I am sorry you do not have any animals that you currently like :(");
   }
   if (animal == null || animal == "") {
     text = "";
   } else {
     // console.log(animal);
     // console.log(uniqueLikes.includes(animal));
-    // if(uniqueLikes.includes(animal) == 'true'){
-    text = "Congrats you adopted " + animal + "!";
+    //if(animal.includes(uniqueLikes))
+    text = prompt("Congrats you adopted " + animal + "!");
  //   }
     // else{
     //   text = "sorry animal is not wihtin likes."
