@@ -14,7 +14,7 @@ var y = 10;
 
 
 
-function preload(){
+function preload(){ 
   data = loadTable(url, 'csv', 'header');
   img0 = loadImage('Roscoe.jpeg');
   img1 = loadImage('Charlie.jpeg');
