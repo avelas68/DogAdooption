@@ -51,7 +51,7 @@ function preload(){
 
 
 function setup() {
-  createCanvas(2000, 2000);
+  createCanvas(1500, 1000);
   background('#6791A0');
 
 
@@ -73,7 +73,7 @@ function draw() {
     text("Age: " + PetAge[count], 500, 600);
     text("Pet Size: " + PetSize[count], 500, 650);
     text("Breed: " + Breed[count], 500, 700);
-      Likes[LikeCount] = PetName[count]+"\n";
+      Likes[LikeCount] = PetName[count - 1]+"\n";
 
       Likes.forEach(function(value) {
         if (uniqueLikes.indexOf(value) === -1) {
@@ -179,10 +179,11 @@ function mousePressed() {
       on = true;
       LikeCount ++; 
       y = y+10;
+      count++;
      }
 
   } 
-  if (mouseX > 700 && mouseX < 1020 && mouseY > 450 && mouseY < 500) {
+  if (mouseX > 700 && mouseX < 800 && mouseY > 450 && mouseY < 500) {
     on = false;
     off = true;
     if (off) {
