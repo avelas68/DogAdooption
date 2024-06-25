@@ -95,9 +95,9 @@ function draw() {
       fill('#FFC25D');
       textSize(26);
 
-      text("Likes: \n", windowWidth * 0.8, windowHeight * 0.15);
+      text("Likes: \n", windowWidth * 0.85, windowHeight * 0.15);
       for (let i = 0 ; i<LikeCount; i++){
-      text(uniqueLikes.join(""),windowWidth * 0.8, windowHeight * 0.2);
+      text(uniqueLikes.join(""),windowWidth * 0.85, windowHeight * 0.2);
 
       }
     
@@ -137,9 +137,9 @@ function draw() {
 
       fill('#FFC25D');
       textSize(26);
-      text("Likes: \n",windowWidth * 0.8, windowHeight * 0.15);
+      text("Likes: \n",windowWidth * 0.85, windowHeight * 0.15);
       for (let i = 0 ; i<LikeCount ; i++){
-      text(uniqueLikes.join("") , windowWidth * 0.8, windowHeight * 0.2);
+      text(uniqueLikes.join("") , windowWidth * 0.85, windowHeight * 0.2);
       }
     
       textSize(26);
