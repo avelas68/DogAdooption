@@ -6,20 +6,38 @@ html, body {
 canvas {
   display: block;
 }
-button {
-  position: absolute;
-  top: 120px;
-  left: 1050px;
-  background-color: #ddd;
-  font-family: sans-serif;
-  border: none;
-  color: black;
-  padding: 16px 32px;
-  text-align: center;
-  font-size: 26px;
-  margin: 4px 2px;
-  transition: 0.3s;
+  button {
+    position: absolute;
+    top: 20vh; /* 10% of the viewport height */
+    left: 15%;
+    transform: translateX(-50%); /* Center the button horizontally */
+    background-color: #ddd;
+    font-family: sans-serif;
+    border: none;
+    color: black;
+    padding: 1em 1em; /* Use em units for padding */
+    text-align: center;
+    font-size: 1.6em; /* Use em units for font size */
+    margin: 1vh 0.5vw; /* Use viewport units for margin */
+    transition: 0.3s;
   }
+  
+  /* Adjust button size and padding for smaller screens */
+  @media (max-width: 768px) {
+    button {
+      padding: 0.8em 1em;
+      font-size: 1.4em;
+    }
+  }
+  
+  /* Further adjust for very small screens */
+  @media (max-width: 480px) {
+    button {
+      padding: 0.6em 1em;
+      font-size: 1.2em;
+    }
+  }
+  
   button:hover {
     background-color: #FFC25D;
     color: "#black";
