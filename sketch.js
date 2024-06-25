@@ -14,7 +14,7 @@ var y = 10;
 
 
 
-function preload(){ 
+function preload(){
   data = loadTable(url, 'csv', 'header');
   img0 = loadImage('Roscoe.jpeg');
   img1 = loadImage('Charlie.jpeg');
@@ -51,7 +51,7 @@ function preload(){
 
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth, windowHeight*2);
   background('#6791A0');
 
 
@@ -59,20 +59,30 @@ function setup() {
 
 function draw() {
 
+  let imgWidth = windowWidth * 0.4; // 40% of viewport width
+  let imgHeight = windowHeight * 0.4; // 40% of viewport height
+  let imgX = (windowWidth - imgWidth) / 2;
+  let imgY = windowHeight * 0.15;
+
+  let checkX = windowWidth * 0.25;
+  let checkY = windowHeight * 0.7;
+  let xX = windowWidth * 0.6;
+  let xY = windowHeight * 0.7;
   if (on) {
 
     background('#556EA6');
-    image(imgArray[count], 525, 130);
+    image(imgArray[count],imgX, imgY);
 
     let PetAge = data.getColumn('PetAge');
     let PetSize = data.getColumn('PetSize');
     let Breed = data.getColumn('Breed');
 
     let PetName = data.getColumn('PetName');
-    text("About Me", 500, 550);
-    text("Age: " + PetAge[count], 500, 600);
-    text("Pet Size: " + PetSize[count], 500, 650);
-    text("Breed: " + Breed[count], 500, 700);
+    text("About Me", imgX + imgWidth / 25,  imgY + imgHeight +160);
+    text("Age: " + PetAge[count], imgX + imgWidth / 25, imgY + imgHeight + 200);
+    text("Pet Size: " + PetSize[count], imgX + imgWidth / 25, imgY + imgHeight + 240);
+    text("Breed: " + Breed[count], imgX + imgWidth / 25, imgY + imgHeight + 280);
+
       Likes[LikeCount] = PetName[count - 1]+"\n";
 
       Likes.forEach(function(value) {
@@ -85,9 +95,9 @@ function draw() {
       fill('#FFC25D');
       textSize(26);
 
-      text("Likes: \n", 900,120);
+      text("Likes: \n", windowWidth * 0.7, windowHeight * 0.15);
       for (let i = 0 ; i<LikeCount; i++){
-      text(uniqueLikes.join(""), 900,150);
+      text(uniqueLikes.join(""),windowWidth * 0.7, windowHeight * 0.2);
 
       }
     
@@ -95,17 +105,20 @@ function draw() {
     textSize(26);
 
 
-    text(PetName[count], 545, 95);
+    text(PetName[count], imgX + imgWidth / 90, imgY - 40);
     let Distance = data.getColumn('Distance');
 
-    text(Distance[count], 545, 400);
+    text(Distance[count],imgX + imgWidth / 80, imgY + imgHeight + 40);
+    image(checkmark, checkX, checkY, 50,50);
+    image(ximg, xX, xY, 50,50);
 
-    image(checkmark,500,450,50,50);
-    image(ximg,700,450,50,50);
 
     
 
     fill('#FFC25D');
+
+
+
 
 
   }
@@ -116,7 +129,7 @@ function draw() {
       count = 0;
     }
      console.log(count);
-      image(imgArray[count], 525, 130);
+      image(imgArray[count], imgX, imgY);
 
 
     let PetName = data.getColumn('PetName');
@@ -124,26 +137,31 @@ function draw() {
 
       fill('#FFC25D');
       textSize(26);
-      text("Likes: \n", 900,120);
+      text("Likes: \n",windowWidth * 0.7, windowHeight * 0.15);
       for (let i = 0 ; i<LikeCount ; i++){
-      text(uniqueLikes.join("") , 900,150);
+      text(uniqueLikes.join("") , windowWidth * 0.7, windowHeight * 0.2);
       }
     
       textSize(26);
       fill('#FFC25D');
-      text(PetName[count], 545, 95);
-      text(Distance[count], 545, 400);
+      text(PetName[count], imgX + imgWidth / 90, imgY - 40);
+      text(Distance[count], imgX + imgWidth / 80, imgY + imgHeight + 40);
 
-  
-      image(checkmark,500,450,50,50);
-      image(ximg,700,450,50,50);
+ 
+      image(checkmark, checkX, checkY, 50,50);
+      image(ximg, xX, xY, 50,50);
+
     let PetAge = data.getColumn('PetAge');
     let PetSize = data.getColumn('PetSize');
     let Breed = data.getColumn('Breed');
-    text("About Me", 500, 550);
-    text("Age: " + PetAge[count], 500, 600);
-    text("Pet Size: " + PetSize[count], 500, 650);
-    text("Breed: " + Breed[count], 500, 700);
+    text("About Me", imgX + imgWidth / 25,  imgY + imgHeight +160);
+    text("Age: " + PetAge[count], imgX + imgWidth / 25, imgY + imgHeight + 200);
+    text("Pet Size: " + PetSize[count], imgX + imgWidth / 25, imgY + imgHeight + 240);
+    text("Breed: " + Breed[count], imgX + imgWidth / 25, imgY + imgHeight + 280);
+
+
+
+
   }
 }
  function myFunction() {
@@ -172,7 +190,14 @@ function draw() {
 }
 
 function mousePressed() {
-  if (mouseX > 500 && mouseX < 600 && mouseY > 450 && mouseY < 500) {
+
+
+  let checkX = windowWidth * 0.25;
+  let checkY = windowHeight * 0.7;
+  let xX = windowWidth * 0.6;
+  let xY = windowHeight * 0.7;
+    if (mouseX > checkX && mouseX < checkX +50 && mouseY > checkY && mouseY < checkY+50 ) {
+
     on = true;
     off = false;
      if (on) {
@@ -183,7 +208,7 @@ function mousePressed() {
      }
 
   } 
-  if (mouseX > 700 && mouseX < 800 && mouseY > 450 && mouseY < 500) {
+    if (mouseX > xX && mouseX < xX + 50 && mouseY > xY && mouseY < xY + 50) {
     on = false;
     off = true;
     if (off) {
@@ -192,4 +217,7 @@ function mousePressed() {
     } 
   
  }
+}
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight*2);
 }
