@@ -51,7 +51,7 @@ function preload(){
 
 
 function setup() {
-  createCanvas(windowWidth, windowHeight*2);
+  createCanvas(windowWidth*2, windowHeight*2);
   background('#6791A0');
 
 
@@ -219,5 +219,5 @@ function mousePressed() {
  }
 }
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight*2);
+  resizeCanvas(windowWidth*2, windowHeight*2);
 }
